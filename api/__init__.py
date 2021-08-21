@@ -1,6 +1,5 @@
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from api.models import SuggestedMovie
 
 app = Flask(__name__)
 app.config.from_object('api.config.Config')
