@@ -2,7 +2,7 @@ from flask.app import Flask
 from flask.cli import FlaskGroup
 
 from api import app, db
-from api.models import SuggestedMovie
+from api.models import MovieSuggestion
 
 cli = FlaskGroup(app)
 
@@ -14,7 +14,7 @@ def create_db():
 
 @cli.command('seed_db')
 def seed_db():
-    suggested_movie = SuggestedMovie(
+    suggested_movie = MovieSuggestion(
         message_id='123abc',
         name='Seeded Moovie',
         service='Netflix',
