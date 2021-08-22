@@ -11,9 +11,4 @@ then
     echo "PostgreSQL started"
 fi
 
-echo "Creating and seeing database tables..."
-python manage.py create_db
-python manage.py seed_db
-echo "Tables created and seeded"
-
 exec "$@"
