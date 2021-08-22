@@ -1,4 +1,6 @@
 from flask import make_response, jsonify, request
+from traceback import print_exc
+
 from api import app, db
 from api.models import (MovieSuggestion, MovieSuggestionSchema)
 
@@ -35,6 +37,7 @@ def add_movie_suggestion():
         json_response = jsonify(response_object)
         return make_response(json_response, 200)
     except Exception as e:
+        print_exc()
         response_object['status'] = status_msg_fail
         response_object['message'] = 'Something went wrong when trying to add movie suggestion'
         db.session.rollback()
